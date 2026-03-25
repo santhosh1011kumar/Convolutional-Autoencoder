@@ -43,7 +43,7 @@ Write your own steps
 ## PROGRAM
 ### Name: SANTHOSH KUMAR A
 ### Register Number: 212224230250
-
+```
 class DenoisingAutoencoder(nn.Module):
     def __init__(self):
         super(DenoisingAutoencoder, self).__init__()
@@ -68,17 +68,20 @@ class DenoisingAutoencoder(nn.Module):
         x = self.encoder(x)
         x = self.decoder(x)
         return x
-
+```
 
 # Initialize model, loss function and optimizer
+```
 model = DenoisingAutoencoder().to(device)
 criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
+```
 
 # Print model summary
 summary(model, input_size=(1, 28, 28))
 
 # Training Function
+```
 def train(model, loader, criterion, optimizer, epochs=5):
     model.train()
     for epoch in range(epochs):
@@ -135,11 +138,12 @@ def visualize_denoising(model, loader, num_images=10):
 
     plt.tight_layout()
     plt.show()
-
+```
 # Run training and visualization
+```
 train(model, train_loader, criterion, optimizer, epochs=5)
 visualize_denoising(model, test_loader)
-
+```
 
 
 ## OUTPUT
