@@ -78,8 +78,9 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 ```
 
 # Print model summary
+```
 summary(model, input_size=(1, 28, 28))
-
+```
 # Training Function
 ```
 def train(model, loader, criterion, optimizer, epochs=5):
